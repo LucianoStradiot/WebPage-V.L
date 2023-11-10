@@ -1,0 +1,66 @@
+@media only screen and (min-width: 1025px) {
+  .logo {
+    width: auto;
+    height: 120px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(90, 168, 168, 0.198);
+    align-items: center;
+  }
+
+  .containerUl {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    list-style: none;
+    font-size: 25px;
+  }
+
+  .list {
+    position: relative;
+    margin-right: 30px;
+    list-style: none;
+  }
+
+  .listLink {
+    text-decoration: none;
+    color: rgb(90, 168, 168);
+    font-family: sans-serif;
+  }
+
+  .listLink:hover {
+    color: rgba(213, 137, 124, 0.621);
+    transition: color 0.4s ease-in-out;
+  }
+
+  .list::before {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 4px;
+    left: 0;
+    content: '';
+    background-color: rgba(213, 137, 124, 0.621);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .list:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .containerLogin {
+    margin-right: 80px;
+  }
+
+  .subContainerLogin {
+    margin: 0;
+    list-style: none;
+    font-size: 23px;
+  }
+}
