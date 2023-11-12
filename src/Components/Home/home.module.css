@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+}
+
+.subContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.profilePhoto {
+  width: 500px;
+  border-radius: 50px;
+}
+
+.description {
+  width: 80%;
+}
