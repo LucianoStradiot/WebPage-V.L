@@ -7,9 +7,13 @@
   .container {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(90, 168, 168, 0.198);
+    background-color: rgb(224, 243, 243);
     box-shadow: 3px 0px 15px rgba(90, 168, 168, 0.622);
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
   }
 
   .containerUl {

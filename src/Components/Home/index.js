@@ -9,6 +9,7 @@ const Home = () => {
           <img src="assets/profilePhoto.png" alt="Profile-photo" className={styles.profilePhoto} />
         </div>
         <div className={styles.subContainer2}>
+          <h2 className={styles.title}>Lic. Valentina Lansellota</h2>
           <p className={styles.description}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
             aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
@@ -20,7 +21,47 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div>recetas</div>
+        <h3>recetas</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
+          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+          explicabo fuga recusandae nihil suscipit eius.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
+          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+          explicabo fuga recusandae nihil suscipit eius.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
+          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+          explicabo fuga recusandae nihil suscipit eius.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
+          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+          explicabo fuga recusandae nihil suscipit eius.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
+          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+          explicabo fuga recusandae nihil suscipit eius.
+        </p>
       </section>
     </main>
   );

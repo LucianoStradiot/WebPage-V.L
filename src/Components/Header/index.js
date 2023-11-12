@@ -5,7 +5,7 @@ import styles from './header.module.css';
 const Header = () => {
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <div className={styles.container}>
           <img src="assets/logo2.png" className={styles.logo} />
           <nav>
