@@ -3,12 +3,12 @@ import styles from './home.module.css';
 
 const Home = () => {
   return (
-    <main>
+    <main className={styles.main}>
       <section className={styles.container}>
         <div className={styles.subContainer}>
           <img src="assets/profilePhoto.png" alt="Profile-photo" className={styles.profilePhoto} />
         </div>
-        <div className={styles.subContainer}>
+        <div className={styles.subContainer2}>
           <p className={styles.description}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
             aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex

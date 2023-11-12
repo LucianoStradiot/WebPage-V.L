@@ -1,19 +1,38 @@
+.main {
+  background: linear-gradient(to bottom, #ffffff 10%, rgba(213, 137, 124, 0.621) 80%);
+}
+
 .container {
   display: flex;
+  margin-top: 40px;
 }
 
 .subContainer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 80%;
+  justify-content: center;
+  width: 50%;
+}
+
+.subContainer2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  margin-left: 30px;
 }
 
 .profilePhoto {
   width: 500px;
   border-radius: 50px;
+  box-shadow: 3px 4px 7px #000;
 }
 
 .description {
-  width: 80%;
+  padding: 40px;
+  width: 70%;
+  background-color: rgba(90, 168, 168, 0.622);
+  color: #fff;
+  box-shadow: 3px 4px 7px #000;
+  border-radius: 15px;
 }
