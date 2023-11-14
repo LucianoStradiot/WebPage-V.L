@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './header.module.css';
 
 const Header = () => {
-  const navigate = useNavigate();
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleSelectChange = (selectedValue) => {
-    navigate(selectedValue);
-    setDropdownOpen(false);
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -20,26 +14,26 @@ const Header = () => {
       <header className={styles.header}>
         <div className={styles.container}>
           <img src="assets/logo2.png" className={styles.logo} />
-          <nav>
-            <div>
-              <ul className={styles.containerUl}>
-                <Link to="/" className={styles.listLink}>
-                  <li className={styles.list}>Home</li>
-                </Link>
-                <Link to="/profesionales" className={styles.listLink}>
-                  <li className={styles.list}>Profesionales</li>
-                </Link>
-                <li className={`${styles.listLink} ${styles.listSelect}`} onClick={toggleDropdown}>
-                  Talleres
-                  {isDropdownOpen && (
-                    <ul className={styles.dropdown}>
-                      <li onClick={() => handleSelectChange('/talleres')}>Taller 1</li>
-                      <li onClick={() => handleSelectChange('/contacto')}>Taller 2</li>
-                    </ul>
-                  )}
-                </li>
-              </ul>
-            </div>
+          <div className={styles.menuButton} id="menuButton" onClick={toggleMenu}>
+            <div className={`${isOpen ? styles.x1 : styles.bar}`}></div>
+            <div className={`${isOpen ? styles.x2 : styles.bar} `}></div>
+            <div className={`${isOpen ? '' : styles.bar} `}></div>
+          </div>
+          <nav className={`${isOpen ? styles.activeMenu : styles.menu}`}>
+            <ul>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/profesionales">
+                <li>Profesionales</li>
+              </Link>
+              <Link to="/talleres">
+                <li>Talleres</li>
+              </Link>
+              <Link to="/contacto">
+                <li>Contacto</li>
+              </Link>
+            </ul>
           </nav>
           <div className={styles.containerLogin}>
             <ul className={styles.subContainerLogin}>

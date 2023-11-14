@@ -1,7 +1,129 @@
-@media only screen and (min-width: 1025px) {
+.menuButton {
+  margin: 20px 0 20px 0;
+  position: fixed;
+  top: 134px;
+  right: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menuButton:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.bar {
+  width: 25px;
+  height: 4px;
+  background-color: #683d69;
+  margin: 4px 0;
+  transform: translate(0%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 1px 1px 4px #000;
+}
+
+.x1 {
+  width: 25px;
+  height: 4px;
+  background-color: #683d69;
+  margin: 4px 0;
+  transform: rotate(-45deg) translate(-3px, 6px);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: -1px 2px 5px #000;
+}
+
+.x2 {
+  width: 25px;
+  height: 4px;
+  background-color: #683d69;
+  margin: 4px 0;
+  transform: rotate(45deg) translate(0px, -2px);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 1px 2px 5px #000;
+}
+
+/* This is when the menu folds */
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 155px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateX(0%);
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  background-color: #683d69;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: 2px 3px 8px #000;
+  z-index: 1;
+}
+
+.menu ul {
+  padding: 0 10px;
+  list-style: none;
+}
+
+.menu li {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* This is when the menu displays */
+
+.activeMenu {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 155px;
+  opacity: 1;
+  text-align: center;
+  transform: translateX(-70%);
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  background-color: #683d69;
+  border-radius: 10px;
+  box-shadow: 2px 3px 8px #000;
+  z-index: 1;
+}
+
+.activeMenu ul {
+  padding: 0 10px;
+  list-style: none;
+}
+
+.activeMenu li {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.activeMenu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 601px) {
+  .menuButton {
+    display: none;
+  }
+
   .logo {
     width: auto;
     height: 120px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInFromLeft 1s ease-in forwards;
   }
 
   .container {
@@ -16,60 +138,32 @@
     z-index: 1000;
   }
 
-  .containerUl {
+  .menu {
+    display: contents;
+    background-color: #fff;
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .menu ul {
     display: flex;
     justify-content: flex-start;
     margin: 0;
     list-style: none;
     font-size: 25px;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: slideInFromTop 1s ease-in forwards;
   }
 
-  .list {
+  .menu li {
     position: relative;
-    margin-right: 30px;
+    margin-right: 10px;
     list-style: none;
   }
 
-  .listSelect {
-    font-size: 20px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-  }
-
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #555;
-    list-style-type: none;
-    padding: 10px;
-  }
-
-  .listSelect:hover {
-    cursor: pointer;
-  }
-
-  .listLink {
-    border: none;
-    text-decoration: none;
-    color: rgb(90, 168, 168);
-    background-color: transparent;
-    font-family: sans-serif;
-    font-size: 25px;
-  }
-
-  .listLink:hover {
-    color: rgba(213, 137, 124, 0.621);
-    transition: color 0.4s ease-in-out;
-    cursor: pointer;
-  }
-
-  .listLink:focus {
-    outline: none;
-  }
-
-  .list::before {
+  .menu li::before {
     position: absolute;
     width: 100%;
     height: 2px;
@@ -82,18 +176,69 @@
     transition: transform 0.4s ease-in-out;
   }
 
-  .list:hover::before {
+  .menu li:hover::before {
     transform: scaleX(1);
     transform-origin: left;
   }
 
+  .menu a {
+    border: none;
+    text-decoration: none;
+    color: rgb(90, 168, 168);
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 25px;
+  }
+
+  .menu a:hover {
+    color: rgba(213, 137, 124, 0.621);
+    transition: color 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
   .containerLogin {
     margin-right: 80px;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInFromRight 1s ease-in forwards;
   }
 
   .subContainerLogin {
     margin: 0;
     list-style: none;
     font-size: 23px;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
