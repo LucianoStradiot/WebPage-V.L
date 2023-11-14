@@ -76,7 +76,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  top: -12px;
+  top: -24px;
   opacity: 1;
   text-align: center;
   transform: translateY(42%);
@@ -96,7 +96,7 @@
 .activeMenu li {
   margin: 13px 0;
   padding: 5px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   background-color: rgb(224, 243, 243);
   color: #5cabab;
@@ -118,7 +118,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  top: 0;
+  top: -24px;
   text-align: center;
   opacity: 0;
   transform: translateY(0%);
@@ -140,7 +140,7 @@
 .menu li {
   margin: 13px 0;
   padding: 5px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   background-color: rgb(224, 243, 243);
   color: #5cabab;
@@ -200,8 +200,15 @@
 
   .menu li {
     position: relative;
-    margin-right: 10px;
     list-style: none;
+    width: 100%;
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: rgb(224, 243, 243);
+    color: #5cabab;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .menu li::before {
@@ -222,19 +229,20 @@
     transform-origin: left;
   }
 
+  .menu li:hover {
+    color: rgba(213, 137, 124, 0.621);
+    transition: color 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
   .menu a {
+    margin-right: 30px;
     border: none;
     text-decoration: none;
     color: rgb(90, 168, 168);
     background-color: transparent;
     font-family: sans-serif;
     font-size: 25px;
-  }
-
-  .menu a:hover {
-    color: rgba(213, 137, 124, 0.621);
-    transition: color 0.4s ease-in-out;
-    cursor: pointer;
   }
 
   .containerLogin {

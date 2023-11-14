@@ -22,7 +22,7 @@ const Header = () => {
             <div className={`${isOpen ? styles.x2 : styles.bar} `}></div>
             <div className={`${isOpen ? '' : styles.bar} `}></div>
           </div>
-          <nav className={`${isOpen ? styles.activeMenu : styles.menu}`} onClick={toggleMenu}>
+          <nav className={`${isOpen ? styles.activeMenu : styles.menu}`}>
             <ul>
               <Link to="/">
                 <li>Home</li>
