@@ -14,12 +14,12 @@ const Header = () => {
       <header className={styles.header}>
         <div className={styles.container}>
           <img src="assets/logo2.png" className={styles.logo} />
-          <div className={styles.menuButton} id="menuButton" onClick={toggleMenu}>
+          <div className={styles.menuButton} onClick={toggleMenu}>
             <div className={`${isOpen ? styles.x1 : styles.bar}`}></div>
             <div className={`${isOpen ? styles.x2 : styles.bar} `}></div>
             <div className={`${isOpen ? '' : styles.bar} `}></div>
           </div>
-          <nav className={`${isOpen ? styles.activeMenu : styles.menu}`}>
+          <nav className={`${isOpen ? styles.activeMenu : styles.menu}`} onClick={toggleMenu}>
             <ul>
               <Link to="/">
                 <li>Home</li>
@@ -34,14 +34,14 @@ const Header = () => {
                 <li>Contacto</li>
               </Link>
             </ul>
+            <div className={styles.containerLogin}>
+              <ul className={styles.subContainerLogin}>
+                <Link to="/login" className={styles.listLink}>
+                  <li className={styles.list}>Login</li>
+                </Link>
+              </ul>
+            </div>
           </nav>
-          <div className={styles.containerLogin}>
-            <ul className={styles.subContainerLogin}>
-              <Link to="/login" className={styles.listLink}>
-                <li className={styles.list}>Login</li>
-              </Link>
-            </ul>
-          </div>
         </div>
       </header>
     </>

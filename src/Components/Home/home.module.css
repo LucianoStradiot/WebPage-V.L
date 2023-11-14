@@ -1,5 +1,5 @@
 .main {
-  background: linear-gradient(to bottom, #ffffff 10%, rgba(213, 137, 124, 0.621) 80%);
+  background: linear-gradient(to bottom, #ffffff 10%, #d48c7c);
   margin-top: 120px;
   padding: 0 40px;
 }
@@ -33,7 +33,7 @@
 .description {
   padding: 40px;
   width: 70%;
-  background-color: #71aeae;
+  background-color: #5cabab;
   color: #fff;
   box-shadow: 3px 4px 7px #000;
   border-radius: 15px;

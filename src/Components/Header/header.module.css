@@ -1,21 +1,37 @@
-.menuButton {
-  margin: 20px 0 20px 0;
+.container {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(224, 243, 243);
+  box-shadow: 3px 0px 15px #5cabab;
+  align-items: center;
   position: fixed;
-  top: 134px;
-  right: 40px;
-  background-color: transparent;
-  cursor: pointer;
-  z-index: 1;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-.menuButton:hover {
-  transform: scale(1.1, 1.1);
+.logo {
+  width: auto;
+  height: 100px;
+  margin-right: 20px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInFromLeft 1s ease-in forwards;
+}
+
+.menuButton {
+  margin: 20px 30px 20px 0;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInFromRight 1s ease-in forwards;
 }
 
 .bar {
   width: 25px;
   height: 4px;
-  background-color: #683d69;
+  background-color: #d48c7c;
   margin: 4px 0;
   transform: translate(0%);
   transition: transform 0.3s ease-in-out;
@@ -25,7 +41,7 @@
 .x1 {
   width: 25px;
   height: 4px;
-  background-color: #683d69;
+  background-color: #d48c7c;
   margin: 4px 0;
   transform: rotate(-45deg) translate(-3px, 6px);
   transition: transform 0.3s ease-in-out;
@@ -35,66 +51,29 @@
 .x2 {
   width: 25px;
   height: 4px;
-  background-color: #683d69;
+  background-color: #d48c7c;
   margin: 4px 0;
   transform: rotate(45deg) translate(0px, -2px);
   transition: transform 0.3s ease-in-out;
   box-shadow: 1px 2px 5px #000;
 }
 
-/* This is when the menu folds */
-
-.menu {
-  position: fixed;
-  right: 0;
-  top: 155px;
-  text-align: center;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateX(0%);
-  transition:
-    transform 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
-  background-color: #683d69;
-  pointer-events: none;
-  cursor: not-allowed;
-  box-shadow: 2px 3px 8px #000;
-  z-index: 1;
-}
-
-.menu ul {
-  padding: 0 10px;
-  list-style: none;
-}
-
-.menu li {
-  margin: 10px 0;
-  padding: 0 10px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-}
-
 /* This is when the menu displays */
 
 .activeMenu {
-  display: block;
-  position: fixed;
-  right: 0;
-  top: 155px;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  top: 0;
   opacity: 1;
   text-align: center;
-  transform: translateX(-70%);
+  transform: translateY(42%);
   transition:
     transform 0.5s ease-in-out,
     opacity 0.5s ease-in-out;
-  background-color: #683d69;
-  border-radius: 10px;
+  background-color: #d48c7c;
   box-shadow: 2px 3px 8px #000;
-  z-index: 1;
 }
 
 .activeMenu ul {
@@ -108,6 +87,42 @@
 }
 
 .activeMenu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* This is when the menu folds */
+
+.menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(0%);
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  background-color: #d48c7c;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: 2px 3px 8px #000;
+}
+
+.menu ul {
+  padding: 0 10px;
+  list-style: none;
+}
+
+.menu li {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.menu a {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
