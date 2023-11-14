@@ -1,8 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './header.module.css';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleSelectChange = (selectedValue) => {
+    navigate(selectedValue);
+    setDropdownOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <>
       <header className={styles.header}>
@@ -17,12 +29,15 @@ const Header = () => {
                 <Link to="/profesionales" className={styles.listLink}>
                   <li className={styles.list}>Profesionales</li>
                 </Link>
-                <Link to="/talleres" className={styles.listLink}>
-                  <li className={styles.list}>Talleres</li>
-                </Link>
-                <Link to="/contacto" className={styles.listLink}>
-                  <li className={styles.list}>Contacto</li>
-                </Link>
+                <li className={`${styles.listLink} ${styles.listSelect}`} onClick={toggleDropdown}>
+                  Talleres
+                  {isDropdownOpen && (
+                    <ul className={styles.dropdown}>
+                      <li onClick={() => handleSelectChange('/talleres')}>Taller 1</li>
+                      <li onClick={() => handleSelectChange('/contacto')}>Taller 2</li>
+                    </ul>
+                  )}
+                </li>
               </ul>
             </div>
           </nav>

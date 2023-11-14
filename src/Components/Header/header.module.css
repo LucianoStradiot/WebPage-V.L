@@ -30,15 +30,43 @@
     list-style: none;
   }
 
+  .listSelect {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    list-style-type: none;
+    padding: 10px;
+  }
+
+  .listSelect:hover {
+    cursor: pointer;
+  }
+
   .listLink {
+    border: none;
     text-decoration: none;
     color: rgb(90, 168, 168);
+    background-color: transparent;
     font-family: sans-serif;
+    font-size: 25px;
   }
 
   .listLink:hover {
     color: rgba(213, 137, 124, 0.621);
     transition: color 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  .listLink:focus {
+    outline: none;
   }
 
   .list::before {
