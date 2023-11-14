@@ -11,7 +11,10 @@ const Header = () => {
 
   return (
     <>
-      <header className={styles.header}>
+      <header
+        className={`${isOpen ? styles.overlay : ''}`}
+        onClick={() => (isOpen ? toggleMenu() : '')}
+      >
         <div className={styles.container}>
           <img src="assets/logo2.png" className={styles.logo} />
           <div className={styles.menuButton} onClick={toggleMenu}>

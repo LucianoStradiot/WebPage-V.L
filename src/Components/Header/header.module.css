@@ -1,3 +1,13 @@
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 800;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -64,8 +74,9 @@
   display: flex;
   position: absolute;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  top: 0;
+  top: -12px;
   opacity: 1;
   text-align: center;
   transform: translateY(42%);
@@ -79,17 +90,24 @@
 .activeMenu ul {
   padding: 0 10px;
   list-style: none;
+  margin: 10px;
 }
 
 .activeMenu li {
-  margin: 10px 0;
-  padding: 0 10px;
+  margin: 13px 0;
+  padding: 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(224, 243, 243);
+  color: #5cabab;
+  border-radius: 5px;
+  box-shadow: 2px 3px 8px #000;
+  width: 135px;
 }
 
 .activeMenu a {
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
 }
 
 /* This is when the menu folds */
@@ -98,11 +116,12 @@
   display: flex;
   position: absolute;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   top: 0;
   text-align: center;
   opacity: 0;
-  transform: translateX(0%);
+  transform: translateY(0%);
   transition:
     transform 0.5s ease-in-out,
     opacity 0.5s ease-in-out;
@@ -115,17 +134,24 @@
 .menu ul {
   padding: 0 10px;
   list-style: none;
+  margin: 10px;
 }
 
 .menu li {
-  margin: 10px 0;
-  padding: 0 10px;
+  margin: 13px 0;
+  padding: 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(224, 243, 243);
+  color: #5cabab;
+  border-radius: 5px;
+  box-shadow: 2px 3px 8px #000;
+  width: 135px;
 }
 
 .menu a {
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
 }
 
 @media only screen and (min-width: 601px) {
