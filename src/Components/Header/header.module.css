@@ -76,7 +76,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  top: -24px;
+  top: -47px;
   opacity: 1;
   text-align: center;
   transform: translateY(42%);
@@ -85,29 +85,37 @@
     opacity 0.5s ease-in-out;
   background-color: #d48c7c;
   box-shadow: 2px 3px 8px #000;
+  box-shadow: inset 2px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .activeMenu ul {
   padding: 0 10px;
   list-style: none;
-  margin: 10px;
+  margin: 0;
+  width: 97%;
+  text-align: center;
 }
 
 .activeMenu li {
-  margin: 13px 0;
-  padding: 5px 0;
+  margin: 20px;
+  padding: 7px 0;
   font-size: 1.2rem;
   font-weight: 600;
-  background-color: rgb(224, 243, 243);
-  color: #5cabab;
-  border-radius: 5px;
-  box-shadow: 2px 3px 8px #000;
-  width: 135px;
+  color: #fff;
+  text-shadow: -1px -1px 2px #00000094;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.activeMenu li:hover {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .activeMenu a {
-  text-decoration: none;
   color: #fff;
+  text-align: start;
+  text-decoration: none;
 }
 
 /* This is when the menu folds */
@@ -118,8 +126,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  top: -24px;
-  text-align: center;
+  top: -47px;
   opacity: 0;
   transform: translateY(0%);
   transition:
@@ -128,43 +135,55 @@
   background-color: #d48c7c;
   pointer-events: none;
   cursor: not-allowed;
-  box-shadow: 2px 3px 8px #000;
+  box-shadow: inset 2px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .menu ul {
   padding: 0 10px;
   list-style: none;
-  margin: 10px;
+  margin: 0;
+  width: 97%;
+  text-align: center;
 }
 
 .menu li {
-  margin: 13px 0;
-  padding: 5px 0;
+  margin: 20px;
+  padding: 7px 0;
   font-size: 1.2rem;
   font-weight: 600;
-  background-color: rgb(224, 243, 243);
-  color: #5cabab;
-  border-radius: 5px;
-  box-shadow: 2px 3px 8px #000;
-  width: 135px;
+  color: #fff;
+  text-shadow: -1px -1px 2px #00000094;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
 }
 
 .menu a {
-  text-decoration: none;
   color: #fff;
+  text-align: start;
+  text-decoration: none;
 }
 
-@media only screen and (min-width: 601px) {
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.subContainerLogin {
+  width: 97%;
+  margin: 10px;
+  padding: 0 10px;
+  list-style: none;
+}
+
+@media only screen and (min-width: 1024px) {
   .menuButton {
     display: none;
   }
 
   .logo {
-    width: auto;
     height: 120px;
-    opacity: 0;
-    transform: translateX(-100px);
-    animation: slideInFromLeft 1s ease-in forwards;
   }
 
   .container {
@@ -189,7 +208,7 @@
 
   .menu ul {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 0;
     list-style: none;
     font-size: 25px;
@@ -201,14 +220,14 @@
   .menu li {
     position: relative;
     list-style: none;
-    width: 100%;
     padding: 0;
     font-size: 1.3rem;
     font-weight: 600;
     background-color: rgb(224, 243, 243);
     color: #5cabab;
-    border-radius: 0;
+    border: 0;
     box-shadow: none;
+    text-shadow: none;
   }
 
   .menu li::before {
@@ -236,7 +255,6 @@
   }
 
   .menu a {
-    margin-right: 30px;
     border: none;
     text-decoration: none;
     color: rgb(90, 168, 168);
@@ -246,6 +264,8 @@
   }
 
   .containerLogin {
+    display: block;
+    width: 0;
     margin-right: 80px;
     opacity: 0;
     transform: translateX(100px);
