@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Routes from './Routes';
 import { BrowserRouter } from 'react-router-dom';
+import WspButton from './Shared/WspButton';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes />
+      <WspButton />
       <Footer />
     </BrowserRouter>
   </React.StrictMode>
