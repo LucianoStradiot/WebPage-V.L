@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './login.module.css';
 import { Link } from 'react-router-dom';
+import Button from '../../../Shared/Button';
 
 const Login = () => {
+  const handleSubmit = () => {
+    console.log('algo');
+  };
+
   return (
     <section className={styles.container}>
       <form className={styles.form}>
@@ -11,16 +16,13 @@ const Login = () => {
           <input />
         </div>
         <Link to="/recoverPassword" className={styles.password}>
-          <a>Forgot password?</a>
+          <p>Forgot password?</p>
         </Link>
         <div className={styles.btnContainer}>
-          <div>
-            <button>Cancel</button>
-          </div>
-          <button>Submit</button>
+          <Button type="cancel" text="Cancelar" onClick={handleSubmit} />
+          <Button type="submit" text="Aceptar" onClick={handleSubmit} />
         </div>
       </form>
-      <h2 className={styles.h2Cont}>Register Now</h2>
     </section>
   );
 };
