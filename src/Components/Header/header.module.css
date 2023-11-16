@@ -79,7 +79,7 @@
   top: -47px;
   opacity: 1;
   text-align: center;
-  transform: translateY(42%);
+  transform: translateY(38%);
   transition:
     transform 0.5s ease-in-out,
     opacity 0.5s ease-in-out;
@@ -163,6 +163,12 @@
   text-decoration: none;
 }
 
+.icon {
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 1.3em;
+}
+
 .containerLogin {
   display: flex;
   flex-direction: column;
@@ -211,7 +217,7 @@
     justify-content: center;
     margin: 0;
     list-style: none;
-    font-size: 25px;
+    font-size: 30px;
     opacity: 0;
     transform: translateY(-100px);
     animation: slideInFromTop 1s ease-in forwards;
@@ -265,7 +271,7 @@
 
   .containerLogin {
     display: block;
-    width: 0;
+    width: 20%;
     margin-right: 80px;
     opacity: 0;
     transform: translateX(100px);

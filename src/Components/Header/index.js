@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
+import { BiBody, BiHome, BiHighlight, BiMap, BiLogIn } from 'react-icons/bi';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,22 +26,47 @@ const Header = () => {
           <nav className={`${isOpen ? styles.activeMenu : styles.menu}`}>
             <ul>
               <Link to="/">
-                <li>Home</li>
+                <li>
+                  Home
+                  <span className={styles.icon}>
+                    <BiHome />
+                  </span>
+                </li>
               </Link>
               <Link to="/profesionales">
-                <li>Profesionales</li>
+                <li>
+                  Profesionales
+                  <span className={styles.icon}>
+                    <BiHighlight />
+                  </span>
+                </li>
               </Link>
               <Link to="/talleres">
-                <li>Talleres</li>
+                <li>
+                  Talleres
+                  <span className={styles.icon}>
+                    <BiBody />
+                  </span>
+                </li>
               </Link>
               <Link to="/contacto">
-                <li>Contacto</li>
+                <li>
+                  Contacto
+                  <span className={styles.icon}>
+                    <BiMap />
+                  </span>
+                </li>
               </Link>
             </ul>
             <div className={styles.containerLogin}>
               <ul className={styles.subContainerLogin}>
                 <Link to="/login" className={styles.listLink}>
-                  <li className={styles.list}>Login</li>
+                  <li className={styles.list}>
+                    Login
+                    <span className={styles.icon}>
+                      <BiLogIn />
+                    </span>
+                  </li>
                 </Link>
               </ul>
             </div>
