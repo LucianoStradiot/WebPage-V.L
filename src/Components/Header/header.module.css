@@ -1,6 +1,194 @@
-@media only screen and (min-width: 1025px) {
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 800;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(224, 243, 243);
+  box-shadow: 3px 0px 15px #5cabab;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: auto;
+  height: 100px;
+  margin-right: 20px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInFromLeft 1s ease-in forwards;
+}
+
+.menuButton {
+  margin: 20px 30px 20px 0;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInFromRight 1s ease-in forwards;
+}
+
+.bar {
+  width: 25px;
+  height: 4px;
+  background-color: #d48c7c;
+  margin: 4px 0;
+  transform: translate(0%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 1px 1px 4px #000;
+}
+
+.x1 {
+  width: 25px;
+  height: 4px;
+  background-color: #d48c7c;
+  margin: 4px 0;
+  transform: rotate(-45deg) translate(-3px, 6px);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: -1px 2px 5px #000;
+}
+
+.x2 {
+  width: 25px;
+  height: 4px;
+  background-color: #d48c7c;
+  margin: 4px 0;
+  transform: rotate(45deg) translate(0px, -2px);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 1px 2px 5px #000;
+}
+
+/* This is when the menu displays */
+
+.activeMenu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  top: -47px;
+  opacity: 1;
+  text-align: center;
+  transform: translateY(38%);
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  background-color: #d48c7c;
+  box-shadow: 2px 3px 8px #000;
+  box-shadow: inset 2px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.activeMenu ul {
+  padding: 0 10px;
+  list-style: none;
+  margin: 0;
+  width: 97%;
+  text-align: center;
+}
+
+.activeMenu li {
+  margin: 20px;
+  padding: 7px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: -1px -1px 2px #00000094;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.activeMenu li:hover {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.activeMenu a {
+  color: #fff;
+  text-align: start;
+  text-decoration: none;
+}
+
+/* This is when the menu folds */
+
+.menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  top: -47px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  background-color: #d48c7c;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: inset 2px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu ul {
+  padding: 0 10px;
+  list-style: none;
+  margin: 0;
+  width: 97%;
+  text-align: center;
+}
+
+.menu li {
+  margin: 20px;
+  padding: 7px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: -1px -1px 2px #00000094;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.menu a {
+  color: #fff;
+  text-align: start;
+  text-decoration: none;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 1.3em;
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.subContainerLogin {
+  width: 97%;
+  margin: 10px;
+  padding: 0 10px;
+  list-style: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menuButton {
+    display: none;
+  }
+
   .logo {
-    width: auto;
     height: 120px;
   }
 
@@ -16,60 +204,39 @@
     z-index: 1000;
   }
 
-  .containerUl {
+  .menu {
+    display: contents;
+    background-color: #fff;
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .menu ul {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 0;
     list-style: none;
-    font-size: 25px;
+    font-size: 30px;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: slideInFromTop 1s ease-in forwards;
   }
 
-  .list {
+  .menu li {
     position: relative;
-    margin-right: 30px;
     list-style: none;
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: rgb(224, 243, 243);
+    color: #5cabab;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
   }
 
-  .listSelect {
-    font-size: 20px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-  }
-
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #555;
-    list-style-type: none;
-    padding: 10px;
-  }
-
-  .listSelect:hover {
-    cursor: pointer;
-  }
-
-  .listLink {
-    border: none;
-    text-decoration: none;
-    color: rgb(90, 168, 168);
-    background-color: transparent;
-    font-family: sans-serif;
-    font-size: 25px;
-  }
-
-  .listLink:hover {
-    color: rgba(213, 137, 124, 0.621);
-    transition: color 0.4s ease-in-out;
-    cursor: pointer;
-  }
-
-  .listLink:focus {
-    outline: none;
-  }
-
-  .list::before {
+  .menu li::before {
     position: absolute;
     width: 100%;
     height: 2px;
@@ -82,18 +249,71 @@
     transition: transform 0.4s ease-in-out;
   }
 
-  .list:hover::before {
+  .menu li:hover::before {
     transform: scaleX(1);
     transform-origin: left;
   }
 
+  .menu li:hover {
+    color: rgba(213, 137, 124, 0.621);
+    transition: color 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  .menu a {
+    border: none;
+    text-decoration: none;
+    color: rgb(90, 168, 168);
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 25px;
+  }
+
   .containerLogin {
+    display: block;
+    width: 20%;
     margin-right: 80px;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInFromRight 1s ease-in forwards;
   }
 
   .subContainerLogin {
     margin: 0;
     list-style: none;
     font-size: 23px;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
