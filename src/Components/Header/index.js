@@ -29,7 +29,7 @@ const Header = () => {
                 <Link to="/profesionales" className={styles.listLink}>
                   <li className={styles.list}>Profesionales</li>
                 </Link>
-                <li className={`${styles.listLin} ${styles.listSelect}`} onClick={toggleDropdown}>
+                <li className={`${styles.listLi} ${styles.listSelect}`} onClick={toggleDropdown}>
                   Talleres
                   {isDropdownOpen && (
                     <ul className={styles.dropdown}>
