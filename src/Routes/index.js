@@ -5,6 +5,7 @@ import Profesionales from '../Views/Profesionales';
 import Talleres from '../Views/Talleres';
 import Contacto from '../Views/Contacto';
 import Login from '../Views/Authentication/Login';
+import Error404 from '../Views/Error404';
 
 const RoutesLanding = () => {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ const RoutesLanding = () => {
         <Route path="/talleres" element={<Talleres />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </>
   );
