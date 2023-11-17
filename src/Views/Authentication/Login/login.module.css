@@ -11,7 +11,7 @@
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.6)
     ),
-    url('../../../../public/assets/fondoLogin.webp');
+    url('../../../../public/assets/fondoLogin.jpg');
   background-position: center;
   background-size: cover;
 }
