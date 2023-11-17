@@ -17,7 +17,7 @@ const Header = () => {
         onClick={() => (isOpen ? toggleMenu() : '')}
       >
         <div className={styles.container}>
-          <img src="assets/logo2.png" className={styles.logo} />
+          <img src="assets/logo2.png" alt="headerLogo" className={styles.logo} />
           <div className={styles.menuButton} onClick={toggleMenu}>
             <div className={`${isOpen ? styles.x1 : styles.bar}`}></div>
             <div className={`${isOpen ? styles.x2 : styles.bar} `}></div>
