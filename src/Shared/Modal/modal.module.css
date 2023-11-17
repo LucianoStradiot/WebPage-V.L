@@ -21,8 +21,7 @@
   top: 300px;
   box-shadow: 3px 3px 10px;
   border-radius: 10px;
-  background-color: #f0876a;
-  background: linear-gradient(to bottom, #f0876a, #fff);
+  background: linear-gradient(to bottom, #d48c7c, #fff);
 }
 
 .logoImg {
@@ -32,7 +31,7 @@
   border-radius: 20%;
   bottom: 37px;
   box-shadow: 3px 3px 5px #000;
-  background-color: #176696;
+  background-color: #fff;
 }
 
 .logoContainer {
@@ -74,7 +73,7 @@
   margin: 0 20px;
   box-shadow: 3px 3px 10px;
   border-radius: 10px;
-  background: linear-gradient(to bottom, #f0876a, #fff);
+  background: linear-gradient(to bottom, #5cabab, #fff);
   animation: fadeInSelfClose 0.5s ease-in forwards;
 }
 
@@ -85,7 +84,7 @@
   margin: 0 20px;
   box-shadow: 3px 3px 10px;
   border-radius: 10px;
-  background: linear-gradient(to bottom, #f0876a, #fff);
+  background: linear-gradient(to bottom, #5cabab, #fff);
   animation: fadeOutSelfClose 0.5s ease-in forwards;
 }
 

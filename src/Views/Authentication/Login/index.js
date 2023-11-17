@@ -33,7 +33,6 @@ const Login = () => {
         title={responseModal.title}
         description={responseModal.description}
         confirmBtn={responseModal.confirmBtn}
-        chooseModal={responseModal}
         denyBtn={responseModal.denyBtn}
         isOpen={isOpen}
         close={() => setIsOpen(!isOpen)}
