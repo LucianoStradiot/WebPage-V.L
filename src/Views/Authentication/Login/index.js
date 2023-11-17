@@ -4,6 +4,7 @@ import styles from './login.module.css';
 import { Link } from 'react-router-dom';
 import Button from '../../../Shared/Button';
 import Spinner from '../../../Shared/Spinner';
+import TextInput from '../../../Shared/TextInput';
 
 const Login = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,22 +35,20 @@ const Login = () => {
         description={responseModal.description}
         confirmBtn={responseModal.confirmBtn}
         denyBtn={responseModal.denyBtn}
+        chooseModal={responseModal}
         isOpen={isOpen}
         close={() => setIsOpen(!isOpen)}
         onClick={() => confirm()}
       />
       <section className={styles.container}>
         <form className={styles.form}>
-          <input />
-          <div className={styles.passwordContainer}>
-            <input />
-          </div>
+          <TextInput labelName="E-mail" placeholderText="Escribe tu e-mail aquí" />
+          <TextInput labelName="Contraseña" placeholderText="Escribe tu contraseña aquí" />
           <Link to="/recoverPassword" className={styles.password}>
-            <p>Forgot password?</p>
+            <p>Olvidaste tu contraseña?</p>
           </Link>
           <div className={styles.btnContainer}>
-            <Button type="cancel" text="Cancelar" />
-            <Button type="dghre" text="Aceptar" onClick={onSubmit} />
+            <Button type="submit" text="Enviar" onClick={onSubmit} />
           </div>
         </form>
       </section>
