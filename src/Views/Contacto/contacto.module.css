@@ -1,10 +1,29 @@
 .container {
   margin-top: 100px;
+  padding: 20px;
+  min-height: 69.7vh;
+  background: linear-gradient(to bottom, #ffffff 10%, #d48c7c);
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container a {
+  display: flex;
+  justify-content: center;
 }
 
 .mapContainer {
   display: flex;
   justify-content: center;
+}
+
+.map {
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px #00000075;
+  border: none;
 }
 
 @media only screen and (min-width: 1024px) {
