@@ -6,13 +6,24 @@
 }
 
 .container ul {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .container a {
   display: flex;
   justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container a:visited,
+.container a:link {
+  color: #5cabab;
+}
+
+.container a:hover {
+  color: #2e355b;
 }
 
 .mapContainer {

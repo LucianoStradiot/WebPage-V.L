@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './contacto.module.css';
 import { BiPhone, BiEnvelope, BiLogoInstagram } from 'react-icons/bi';
 
 const Contacto = () => {
+  const phoneSoundRef = useRef(new Audio('audio/clickButton.mp3'));
+  const playClickSound = (audioRef) => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
+  };
+
+  useEffect(() => {
+    phoneSoundRef.current.load();
+  }, []);
+
   return (
     <section className={styles.container}>
       <div>Encontrame en cualquiera de las siguientes redes</div>
       <ul>
-        <a href="tel:+02477664103" target="_blank" rel="noreferrer">
+        <a
+          href="tel:+02477664103"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => playClickSound(phoneSoundRef)}
+        >
           <span className={styles.icons}>
             <BiPhone />
           </span>
@@ -17,6 +32,7 @@ const Contacto = () => {
           href="mailto:nutricionista.valen@gmail.com?Subject=Deseo%20obtener%20wmas%20informacion"
           target="_blank"
           rel="noreferrer"
+          onClick={() => playClickSound(phoneSoundRef)}
         >
           <span className={styles.icons}>
             <BiEnvelope />
@@ -27,6 +43,7 @@ const Contacto = () => {
           href="https://www.instagram.com/nutricionista.valen.lansellota/"
           target="_blank"
           rel="noreferrer"
+          onClick={() => playClickSound(phoneSoundRef)}
         >
           <span className={styles.icons}>
             <BiLogoInstagram />
