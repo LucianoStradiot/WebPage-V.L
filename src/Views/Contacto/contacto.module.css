@@ -1,8 +1,31 @@
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #d48c7c;
+}
+
+.address {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #d48c7c;
+}
+
 .container {
   margin-top: 100px;
   padding: 20px;
-  min-height: 69.7vh;
   background: linear-gradient(to bottom, #ffffff 10%, #d48c7c);
+}
+
+.subContainer {
+  padding: 20px;
+  margin: 4vh auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #000;
+  opacity: 0;
+  animation: slideInFromLeft 1s ease-in forwards;
 }
 
 .container ul {
@@ -26,12 +49,19 @@
   color: #2e355b;
 }
 
+.icons {
+  vertical-align: middle;
+  margin-right: 5px;
+  font-size: 1.4em;
+}
+
 .mapContainer {
   display: flex;
   justify-content: center;
 }
 
 .map {
+  height: 200px;
   border-radius: 10px;
   box-shadow: 2px 3px 5px #00000075;
   border: none;
@@ -40,5 +70,16 @@
 @media only screen and (min-width: 1024px) {
   .container {
     margin-top: 120px;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

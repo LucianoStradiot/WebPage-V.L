@@ -234,6 +234,7 @@
     border: 0;
     box-shadow: none;
     text-shadow: none;
+    transition: color 0.4s ease-in-out;
   }
 
   .menu li::before {
