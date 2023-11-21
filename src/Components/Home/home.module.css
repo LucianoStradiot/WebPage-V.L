@@ -1,32 +1,32 @@
 .main {
   background: linear-gradient(to bottom, #ffffff 10%, #d48c7c);
   margin-top: 120px;
-  padding: 0 40px;
 }
 
 .container {
   display: flex;
-  padding-top: 40px;
+  flex-direction: column;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(255, 255, 255, 0.7) 60%
+    ),
+    url('../../../public/assets/profilePhoto.jpeg');
+  background-position: inherit;
+  background-size: cover;
 }
 
 .subContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-}
-
-.subContainer2 {
-  display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  width: 50%;
-  margin-left: 30px;
+  align-items: flex-end;
+  margin: 22vh 49vw;
+  width: 40%;
 }
 
 .profilePhoto {
-  width: 500px;
-  border-radius: 50px;
+  width: 100%;
   box-shadow: 3px 4px 7px #000;
 }
 

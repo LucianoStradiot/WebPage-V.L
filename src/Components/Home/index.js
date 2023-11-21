@@ -6,9 +6,6 @@ const Home = () => {
     <main className={styles.main}>
       <section className={styles.container}>
         <div className={styles.subContainer}>
-          <img src="assets/profilePhoto.png" alt="Profile-photo" className={styles.profilePhoto} />
-        </div>
-        <div className={styles.subContainer2}>
           <h2 className={styles.title}>Lic. Valentina Lansellota</h2>
           <p className={styles.description}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
