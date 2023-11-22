@@ -11,12 +11,12 @@
 .container {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(224, 243, 243);
-  box-shadow: 3px 0px 15px #5cabab;
   align-items: center;
   position: fixed;
   width: 100%;
   top: 0;
+  background-color: rgb(224, 243, 243);
+  box-shadow: 3px 0px 15px #5cabab;
   z-index: 1000;
 }
 
@@ -99,8 +99,8 @@
 .activeMenu li {
   margin: 20px;
   padding: 7px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 450;
   color: #fff;
   text-shadow: -1px -1px 2px #00000094;
   border-bottom: 1px solid #fff;
@@ -149,8 +149,8 @@
 .menu li {
   margin: 20px;
   padding: 7px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 450;
   color: #fff;
   text-shadow: -1px -1px 2px #00000094;
   border-bottom: 1px solid #fff;
@@ -227,8 +227,8 @@
     position: relative;
     list-style: none;
     padding: 0;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 450;
     background-color: rgb(224, 243, 243);
     color: #5cabab;
     border: 0;
@@ -266,7 +266,6 @@
     text-decoration: none;
     color: #5cabab;
     background-color: transparent;
-    font-family: sans-serif;
     font-size: 25px;
   }
 
