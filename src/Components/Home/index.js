@@ -25,7 +25,7 @@ const Home = () => {
           exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
           Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
           dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius.
+          explicabo fuga recusandae nihil suscipit eius
         </p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
