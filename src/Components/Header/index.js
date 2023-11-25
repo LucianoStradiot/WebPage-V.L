@@ -47,9 +47,9 @@ const Header = () => {
                   </span>
                 </li>
               </Link>
-              <Link to="/profesionales">
+              <Link to="/blog">
                 <li>
-                  Profesionales
+                  Blog
                   <span className={styles.icon}>
                     <BiHighlight />
                   </span>

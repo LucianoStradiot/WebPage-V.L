@@ -1,5 +1,4 @@
 {
-  "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDragAndDrop": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

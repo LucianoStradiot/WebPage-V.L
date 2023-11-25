@@ -18,7 +18,7 @@ const RoutesLanding = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profesionales" element={<Profesionales />} />
+        <Route path="/blog" element={<Profesionales />} />
         <Route path="/talleres" element={<Talleres />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/login" element={<Login />} />
