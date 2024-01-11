@@ -49,8 +49,8 @@ const Header = () => {
               isOpen && scrollY < 100
                 ? styles.activeMenu
                 : isOpen && scrollY > 100
-                  ? styles.scrolledActiveMenu
-                  : styles.menu
+                ? styles.scrolledActiveMenu
+                : styles.menu
             }`}
             onClick={() => playClickSound(phoneSoundRef)}
           >
