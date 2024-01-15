@@ -22,24 +22,32 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className={styles.sectionOne}>
+        <h3 className={styles.titleSectionOne}>Chamuyo de ayudar al cliente</h3>
+        <div className={styles.articleOne}>
+          <p className={styles.paragraphSectionOne}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+            aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+            exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+            Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam
+            sed dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+            explicabo fuga recusandae nihil suscipit eius
+          </p>
+          <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+        </div>
+        <div className={styles.articleTwo}>
+          <p className={styles.paragraphSectionOne}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
+            aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
+            exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
+            Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam
+            sed dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
+            explicabo fuga recusandae nihil suscipit eius.
+          </p>
+          <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+        </div>
+      </section>
       <section className={styles.containerRecipes}>
-        <h3>Chamuyo de ayudar al cliente</h3>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
-          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
-          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
-          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
-          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
-          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
-          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
-          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
-          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius.
-        </p>
         <h3>Planes dietarios</h3>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
@@ -57,7 +65,11 @@ const Home = () => {
           dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
           explicabo fuga recusandae nihil suscipit eius.
         </p>
+      </section>
+      <section className={styles.containerRecipes}>
         <h3>Frase motivacional en grande</h3>
+      </section>
+      <section className={styles.containerRecipes}>
         <h3>Descripcion de la clinica donde atiende</h3>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,

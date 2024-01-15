@@ -8,6 +8,10 @@
   flex-direction: column;
 }
 
+.title {
+  font-size: 27px;
+}
+
 .photoContainer {
   position: relative;
   width: 100%;
@@ -44,6 +48,7 @@
   display: block;
   position: relative;
   text-align: center;
+  animation: appear 1s ease-in;
 }
 
 .description {
@@ -55,6 +60,22 @@
   background-color: #fff;
 }
 
+.sectionOne {
+  margin: 50px 10%;
+  max-width: 1500px;
+}
+
+.titleSectionOne {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.paragraphSectionOne {
+  max-width: 700px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
 @media only screen and (min-width: 1024px) {
   .main {
     margin-top: 120px;
@@ -62,6 +83,10 @@
 
   .subContainer {
     display: flex;
+  }
+
+  .title {
+    font-size: 35px;
   }
 
   .descContainer {
@@ -76,30 +101,49 @@
     width: 70%;
   }
 
-  .photo {
-    width: 100%;
+  .titleSectionOne {
+    font-size: 30px;
+  }
+
+  .articleOne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .articleOne p {
+    margin: 0 60px 0 0;
+  }
+
+  .paragraphSectionOne {
+    font-size: 20px;
+  }
+
+  .photoSectionOne {
+    width: 500px;
     height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+  }
+
+  .articleTwo {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .articleTwo p {
+    margin: 0 0 0 60px;
   }
 }
 
-@keyframes slideInFromRight {
+@keyframes appear {
   0% {
     opacity: 0;
-    transform: translateX(100px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
