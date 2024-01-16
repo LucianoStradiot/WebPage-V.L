@@ -23,7 +23,7 @@ const Home = () => {
         </div>
       </section>
       <section className={styles.sectionOne}>
-        <h3 className={styles.titleSectionOne}>Chamuyo de ayudar al cliente</h3>
+        <h3 className={styles.titleSectionOne}>Ayuda al cliente</h3>
         <div className={styles.articleOne}>
           <p className={styles.paragraphSectionOne}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
@@ -66,8 +66,9 @@ const Home = () => {
           explicabo fuga recusandae nihil suscipit eius.
         </p>
       </section>
-      <section className={styles.containerRecipes}>
-        <h3>Frase motivacional en grande</h3>
+      <section className={styles.motivationalPhotoContainer}>
+        <h2 className={styles.motivationalTitle}>Para bajar de peso, hay que comer menos</h2>
+        <img src="assets/imgMotivacional.jpg" alt="img-motivacional" className={styles.photo} />
       </section>
       <section className={styles.containerRecipes}>
         <h3>Descripcion de la clinica donde atiende</h3>
