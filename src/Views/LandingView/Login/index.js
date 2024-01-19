@@ -48,7 +48,7 @@ const Login = () => {
             <p>Olvidaste tu contraseña?</p>
           </Link>
           <div className={styles.btnContainer}>
-            <Button type="submit" text="Enviar" onClick={onSubmit} />
+            <Button type="subfdmit" text="Enviar" onClick={onSubmit} />
           </div>
         </form>
       </section>
