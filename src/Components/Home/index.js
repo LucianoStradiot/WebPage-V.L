@@ -47,47 +47,9 @@ const Home = () => {
           <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
         </div>
       </section>
-      <section className={styles.containerRecipes}>
-        <h3>Planes dietarios</h3>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
-          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
-          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
-          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
-          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
-          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
-          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
-          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
-          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius.
-        </p>
-      </section>
       <section className={styles.motivationalPhotoContainer}>
         <h2 className={styles.motivationalTitle}>Para bajar de peso, hay que comer menos</h2>
         <img src="assets/imgMotivacional.jpg" alt="img-motivacional" className={styles.photo} />
-      </section>
-      <section className={styles.containerRecipes}>
-        <h3>Descripcion de la clinica donde atiende</h3>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
-          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
-          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
-          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
-          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius.
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore blanditiis quod,
-          aspernatur placeat quidem laboriosam suscipit fugiat commodi facilis voluptatibus ex
-          exercitationem minima architecto. Velit praesentium eaque necessitatibus ad impedit?
-          Soluta earum tempore omnis debitis optio itaque architecto, facilis, praesentium ullam sed
-          dolor consequatur ut, similique accusamus nam. Dolorem qui unde sit molestiae est
-          explicabo fuga recusandae nihil suscipit eius.
-        </p>
       </section>
     </main>
   );
