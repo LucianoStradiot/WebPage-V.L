@@ -47,15 +47,37 @@
   text-align: center;
 }
 
+.password:hover {
+  font-size: 1.1em;
+  transition: font-size 0.3s ease-in-out;
+}
+
 .passwordContainer {
   position: relative;
   width: 100%;
+}
+
+.showPasswordIcon {
+  position: absolute;
+  right: 10px;
+  top: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  animation: showPassword 1.5s forwards;
 }
 
 @media only screen and (min-width: 1024px) {
   .container {
     margin-top: 120px;
     min-height: 78.7vh;
+  }
+
+  .showPasswordIcon {
+    right: 15px;
+    top: 57px;
+    font-size: 26px;
   }
 }
 
@@ -73,5 +95,15 @@
   100% {
     opacity: 1;
     height: 300px;
+  }
+}
+
+@keyframes showPassword {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

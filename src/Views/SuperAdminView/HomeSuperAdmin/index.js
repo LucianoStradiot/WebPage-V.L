@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './home.module.css';
-import { useModalContext } from '../../Components/Context';
-import Modal from '../../Shared/Modal';
+import styles from './homeSuperAdmin.module.css';
+import { useModalContext } from '../../../Components/Context';
+import Modal from '../../../Shared/Modal';
 
-const Home = () => {
+const HomeSuperAdmin = () => {
   const { modalState } = useModalContext();
   return (
     <>
@@ -61,4 +61,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeSuperAdmin;

@@ -7,6 +7,10 @@ import Talleres from '../Views/LandingView/Talleres';
 import Contacto from '../Views/LandingView/Contacto';
 import Login from '../Views/LandingView/Login';
 import Error404 from '../Views/Error404';
+import SuperAdminView from '../Views/SuperAdminView';
+import HomeSuperAdmin from '../Views/SuperAdminView/HomeSuperAdmin';
+import RecoverPassword from '../Views/LandingView/Login/RecoverPassword';
+import ResetPassword from '../Views/LandingView/Login/ResetPassword';
 
 const RoutesLanding = () => {
   const { pathname } = useLocation();
@@ -24,8 +28,15 @@ const RoutesLanding = () => {
           <Route path="/talleres" element={<Talleres />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/login" element={<Login />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="/recover-password" element={<RecoverPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
         </Route>
+
+        <Route path="/super-admin" element={<SuperAdminView />}>
+          <Route index element={<HomeSuperAdmin />} />
+        </Route>
+
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </>
   );
