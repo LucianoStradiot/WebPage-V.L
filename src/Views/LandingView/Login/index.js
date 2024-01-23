@@ -71,7 +71,7 @@ const Login = () => {
             input={'input'}
             labelName={'E-mail'}
             placeholderText={'Escribe tu dirección de correo electrónico'}
-            refrerence={emailRef}
+            reference={emailRef}
             error={errors.email}
           />
           <div className={styles.passwordContainer}>
@@ -79,7 +79,7 @@ const Login = () => {
               labelName={'Contraseña'}
               placeholderText={'Escribe tu contraseña'}
               input={'input'}
-              refrerence={passwordRef}
+              reference={passwordRef}
               error={errors.password}
               inputType={showPassword ? 'text' : 'password'}
             />

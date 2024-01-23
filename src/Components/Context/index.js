@@ -2,9 +2,17 @@ import { useContext, useState, createContext } from 'react';
 
 const StateContext = createContext({
   user: null,
-  role: null,
+  homeInfo: {
+    principalTitle: '',
+    biography: '',
+    secondaryTitle: '',
+    descriptionLeft: '',
+    descriptionRight: '',
+    motivationalPhrase: ''
+  },
   setUser: () => {},
-  setToken: () => {}
+  setToken: () => {},
+  setHomeInfo: () => {}
 });
 
 export const ContextProvider = ({ children }) => {
@@ -13,14 +21,33 @@ export const ContextProvider = ({ children }) => {
     return storedUser ? JSON.parse(storedUser) : null;
   });
   const [token, _setToken] = useState(sessionStorage.getItem('ACCESS_TOKEN'));
+  const [homeInfo, _setHomeInfo] = useState(() => {
+    const storedHomeInfo = sessionStorage.getItem('homeInfo');
+    return storedHomeInfo
+      ? JSON.parse(storedHomeInfo)
+      : {
+          principalTitle: '',
+          biography: '',
+          secondaryTitle: '',
+          descriptionLeft: '',
+          descriptionRight: '',
+          motivationalPhrase: ''
+        };
+  });
 
   const setToken = (token) => {
     _setToken(token);
     if (token) {
       sessionStorage.setItem('ACCESS_TOKEN', token);
+      sessionStorage.setItem('homeInfo', JSON.stringify(homeInfo));
     } else {
       sessionStorage.removeItem('ACCESS_TOKEN');
+      sessionStorage.removeItem('homeInfo');
     }
+  };
+
+  const setHomeInfo = (info) => {
+    _setHomeInfo(info);
   };
 
   return (
@@ -28,6 +55,8 @@ export const ContextProvider = ({ children }) => {
       value={{
         user,
         token,
+        homeInfo,
+        setHomeInfo,
         setUser,
         setToken
       }}
@@ -49,6 +78,7 @@ export const ModalProvider = ({ children }) => {
     confirmBtn: '',
     denyBtn: '',
     chooseModal: false,
+    inputModalBiography: false,
     onClick: null
   });
 
@@ -67,6 +97,7 @@ export const ModalProvider = ({ children }) => {
       confirmBtn: '',
       denyBtn: '',
       chooseModal: false,
+      inputModalBiography: false,
       onClick: null
     });
   };
