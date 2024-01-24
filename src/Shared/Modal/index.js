@@ -14,26 +14,40 @@ const Modal = () => {
     denyBtn,
     chooseModal,
     onClick,
-    inputModalBiography
+    inputModalBiography,
+    inputModalHelpClients,
+    inputModalPhrase
   } = modalState;
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [editInfo, setEditInfo] = useState({
-    principalTitle: '',
-    biography: ''
+  const [editInfo, setEditInfo] = useState(() => {
+    const storedHomeInfo = JSON.parse(sessionStorage.getItem('homeInfo'));
+    return storedHomeInfo || {};
   });
 
+  useEffect(() => {
+    sessionStorage.setItem('homeInfo', JSON.stringify(editInfo));
+  }, [editInfo]);
+
   const handleConfirm = () => {
-    onClick({ principalTitle: editInfo.principalTitle, biography: editInfo.biography });
+    onClick({
+      principalTitle: editInfo.principalTitle,
+      biography: editInfo.biography,
+      secondaryTitle: editInfo.secondaryTitle,
+      descriptionLeft: editInfo.descriptionLeft,
+      descriptionRight: editInfo.descriptionRight,
+      motivationalPhrase: editInfo.motivationalPhrase
+    });
   };
 
   useEffect(() => {
-    const storedHomeInfo = JSON.parse(sessionStorage.getItem('homeInfo'));
-    setEditInfo(storedHomeInfo || { principalTitle: '', biography: '' });
-  }, []);
-
-  useEffect(() => {
     let timer;
-    if (!chooseModal && !inputModalBiography && isOpen) {
+    if (
+      !chooseModal &&
+      !inputModalBiography &&
+      !inputModalHelpClients &&
+      !inputModalPhrase &&
+      isOpen
+    ) {
       timer = setTimeout(() => {
         setIsFadingOut(false);
         setTimeout(() => {
@@ -46,7 +60,14 @@ const Modal = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [isOpen, chooseModal, closeModal, inputModalBiography]);
+  }, [
+    isOpen,
+    chooseModal,
+    closeModal,
+    inputModalBiography,
+    inputModalHelpClients,
+    inputModalPhrase
+  ]);
 
   return isOpen ? (
     chooseModal ? (
@@ -64,7 +85,15 @@ const Modal = () => {
         </div>
       </div>
     ) : inputModalBiography ? (
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleConfirm();
+          }
+        }}
+      >
         <div className={styles.subContainer}>
           <div className={styles.logoContainer}>
             <img className={styles.logoImg} src="assets/isologo.png" alt="logo-v.l" />
@@ -90,6 +119,96 @@ const Modal = () => {
               setEditInfo((prevInfo) => ({
                 ...prevInfo,
                 biography: e.target.value
+              }));
+            }}
+            className={styles.textArea}
+          />
+          <div className={styles.btnsContainer}>
+            <Button type="cancel" text={denyBtn} onClick={closeModal} />
+            <Button type="submit" text={confirmBtn} onClick={handleConfirm} />
+          </div>
+        </div>
+      </div>
+    ) : inputModalHelpClients ? (
+      <div
+        className={styles.container}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleConfirm();
+          }
+        }}
+      >
+        <div className={styles.subContainer}>
+          <div className={styles.logoContainer}>
+            <img className={styles.logoImg} src="assets/isologo.png" alt="logo-v.l" />
+          </div>
+          <div className={styles.title}>{title.toUpperCase()}</div>
+          <TextInput labelName={'Título'} />
+          <input
+            type="text"
+            value={editInfo.secondaryTitle}
+            onChange={(e) => {
+              setEditInfo((prevInfo) => ({
+                ...prevInfo,
+                secondaryTitle: e.target.value
+              }));
+            }}
+            className={styles.input}
+          />
+          <TextInput labelName={'Párrafo 1'} />
+          <textarea
+            type="text"
+            value={editInfo.descriptionLeft}
+            onChange={(e) => {
+              setEditInfo((prevInfo) => ({
+                ...prevInfo,
+                descriptionLeft: e.target.value
+              }));
+            }}
+            className={styles.textArea}
+          />
+          <TextInput labelName={'Párrafo 2'} />
+          <textarea
+            type="text"
+            value={editInfo.descriptionRight}
+            onChange={(e) => {
+              setEditInfo((prevInfo) => ({
+                ...prevInfo,
+                descriptionRight: e.target.value
+              }));
+            }}
+            className={styles.textArea}
+          />
+          <div className={styles.btnsContainer}>
+            <Button type="cancel" text={denyBtn} onClick={closeModal} />
+            <Button type="submit" text={confirmBtn} onClick={handleConfirm} />
+          </div>
+        </div>
+      </div>
+    ) : inputModalPhrase ? (
+      <div
+        className={styles.container}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleConfirm();
+          }
+        }}
+      >
+        <div className={styles.subContainer}>
+          <div className={styles.logoContainer}>
+            <img className={styles.logoImg} src="assets/isologo.png" alt="logo-v.l" />
+          </div>
+          <div className={styles.title}>{title.toUpperCase()}</div>
+          <TextInput labelName={'Frase motivacional'} />
+          <textarea
+            type="text"
+            value={editInfo.motivationalPhrase}
+            onChange={(e) => {
+              setEditInfo((prevInfo) => ({
+                ...prevInfo,
+                motivationalPhrase: e.target.value
               }));
             }}
             className={styles.textArea}

@@ -79,6 +79,8 @@ export const ModalProvider = ({ children }) => {
     denyBtn: '',
     chooseModal: false,
     inputModalBiography: false,
+    inputModalHelpClients: false,
+    inputModalPhrase: false,
     onClick: null
   });
 
@@ -98,6 +100,8 @@ export const ModalProvider = ({ children }) => {
       denyBtn: '',
       chooseModal: false,
       inputModalBiography: false,
+      inputModalHelpClients: false,
+      inputModalPhrase: false,
       onClick: null
     });
   };

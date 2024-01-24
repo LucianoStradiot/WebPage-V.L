@@ -32,6 +32,26 @@ const HomeSuperAdmin = () => {
     });
   };
 
+  const handleUpdateHelpClients = () => {
+    openModal({
+      title: 'Editar sección ayuda',
+      confirmBtn: 'Aceptar',
+      denyBtn: 'Cancelar',
+      inputModalHelpClients: true,
+      onClick: (updatedValues) => handleUpdateClick(updatedValues)
+    });
+  };
+
+  const handleUpdatePhrase = () => {
+    openModal({
+      title: 'Editar frase motivacional',
+      confirmBtn: 'Aceptar',
+      denyBtn: 'Cancelar',
+      inputModalPhrase: true,
+      onClick: (updatedValues) => handleUpdateClick(updatedValues)
+    });
+  };
+
   const handleUpdateClick = async (updatedValues) => {
     setIsLoading(true);
     try {
@@ -70,18 +90,26 @@ const HomeSuperAdmin = () => {
                 </div>
               </div>
             </section>
-            <section className={styles.sectionOne}>
-              <h3 className={styles.titleSectionOne}>{homeInfo.secondaryTitle}</h3>
-              <div className={styles.articleOne}>
-                <p className={styles.paragraphSectionOne}>{homeInfo.descriptionLeft}</p>
-                <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
-              </div>
-              <div className={styles.articleTwo}>
-                <p className={styles.paragraphSectionOne}>{homeInfo.descriptionRight}</p>
-                <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+            <section className={styles.containerSectionOne}>
+              <div className={styles.sectionOne}>
+                <span className={styles.editIconContainer} onClick={handleUpdateHelpClients}>
+                  <FiEdit className={styles.editIcon} />
+                </span>
+                <h3 className={styles.titleSectionOne}>{homeInfo.secondaryTitle}</h3>
+                <div className={styles.articleOne}>
+                  <p className={styles.paragraphSectionOne}>{homeInfo.descriptionLeft}</p>
+                  <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+                </div>
+                <div className={styles.articleTwo}>
+                  <p className={styles.paragraphSectionOne}>{homeInfo.descriptionRight}</p>
+                  <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+                </div>
               </div>
             </section>
             <section className={styles.motivationalPhotoContainer}>
+              <span className={styles.editIconContainer} onClick={handleUpdatePhrase}>
+                <FiEdit className={styles.editIcon} />
+              </span>
               <h2 className={styles.motivationalTitle}>{homeInfo.motivationalPhrase}</h2>
               <img
                 src="assets/imgMotivacional.jpg"
