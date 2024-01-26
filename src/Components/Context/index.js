@@ -31,7 +31,8 @@ export const ContextProvider = ({ children }) => {
           secondaryTitle: '',
           descriptionLeft: '',
           descriptionRight: '',
-          motivationalPhrase: ''
+          motivationalPhrase: '',
+          profilePhoto: ''
         };
   });
 

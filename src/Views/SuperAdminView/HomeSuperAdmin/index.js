@@ -15,7 +15,7 @@ const HomeSuperAdmin = () => {
     setIsLoading(true);
     try {
       const { data } = await axiosClient.get('/home-info');
-      setHomeInfo(data);
+      setHomeInfo(data.data);
     } catch (err) {
       console.error(err);
     }
@@ -54,8 +54,24 @@ const HomeSuperAdmin = () => {
 
   const handleUpdateClick = async (updatedValues) => {
     setIsLoading(true);
+
     try {
-      await axiosClient.post('/home-info/update', updatedValues);
+      const formData = new FormData();
+
+      Object.entries(updatedValues).forEach(([key, value]) => {
+        if (value instanceof File) {
+          formData.append(key, value);
+        } else {
+          formData.append(key, value);
+        }
+      });
+
+      await axiosClient.post('/home-info/update', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
       setHomeInfo(updatedValues);
       closeModal();
     } catch (err) {
@@ -82,7 +98,13 @@ const HomeSuperAdmin = () => {
                   <span className={styles.editIconContainer}>
                     <FiEdit className={styles.editIcon} />
                   </span>
-                  <img src="assets/profilePhoto.jpeg" alt="" className={styles.photo} />
+                  <img
+                    src={
+                      homeInfo?.profilePhoto || `${process.env.PUBLIC_URL}/assets/profilePhoto.jpeg`
+                    }
+                    alt="biography-photo"
+                    className={styles.photo}
+                  />
                 </div>
                 <div className={styles.descContainer}>
                   <h2 className={styles.title}>{homeInfo.principalTitle}</h2>
@@ -98,11 +120,19 @@ const HomeSuperAdmin = () => {
                 <h3 className={styles.titleSectionOne}>{homeInfo.secondaryTitle}</h3>
                 <div className={styles.articleOne}>
                   <p className={styles.paragraphSectionOne}>{homeInfo.descriptionLeft}</p>
-                  <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+                  <img
+                    src={homeInfo?.helpPhoto1 || `${process.env.PUBLIC_URL}/assets/sopa.png`}
+                    alt="help-photo1"
+                    className={styles.photoSectionOne}
+                  />
                 </div>
                 <div className={styles.articleTwo}>
                   <p className={styles.paragraphSectionOne}>{homeInfo.descriptionRight}</p>
-                  <img src="assets/sopa.png" alt="" className={styles.photoSectionOne} />
+                  <img
+                    src={homeInfo?.helpPhoto2 || `${process.env.PUBLIC_URL}/assets/sopa.png`}
+                    alt="help-photo2"
+                    className={styles.photoSectionOne}
+                  />
                 </div>
               </div>
             </section>
