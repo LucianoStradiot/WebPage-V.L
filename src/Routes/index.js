@@ -34,6 +34,9 @@ const RoutesLanding = () => {
 
         <Route path="/super-admin" element={<SuperAdminView />}>
           <Route index element={<HomeSuperAdmin />} />
+          <Route path="/super-admin/blog" element={<Blog />} />
+          <Route path="/super-admin/talleres" element={<Talleres />} />
+          <Route path="/super-admin/contacto" element={<Contacto />} />
         </Route>
 
         <Route path="*" element={<Error404 />} />

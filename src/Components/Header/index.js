@@ -102,7 +102,7 @@ const Header = () => {
                       </span>
                     </li>
                   </Link>
-                  <Link to="/blog">
+                  <Link to="/super-admin/blog">
                     <li>
                       Blog
                       <span className={styles.icon}>
@@ -110,7 +110,7 @@ const Header = () => {
                       </span>
                     </li>
                   </Link>
-                  <Link to="/talleres">
+                  <Link to="/super-admin/talleres">
                     <li>
                       Talleres
                       <span className={styles.icon}>
@@ -118,7 +118,7 @@ const Header = () => {
                       </span>
                     </li>
                   </Link>
-                  <Link to="/contacto">
+                  <Link to="/super-admin/contacto">
                     <li>
                       Contacto
                       <span className={styles.icon}>

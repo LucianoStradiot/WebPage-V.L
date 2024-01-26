@@ -4,12 +4,10 @@ import styles from './textInput.module.css';
 const TextInput = ({
   labelName,
   input,
-  children,
-  nameSelect,
   inputType,
   password,
   description,
-  refrerence,
+  reference,
   placeholderText,
   error
 }) => {
@@ -21,7 +19,7 @@ const TextInput = ({
           <p>{description}</p>
           <input
             className={`${error ? `${styles.input} ${styles.errorBorder}` : styles.input}`}
-            ref={refrerence}
+            ref={reference}
             placeholder={placeholderText}
             type={inputType}
           />
@@ -29,21 +27,11 @@ const TextInput = ({
       ) : input ? (
         <input
           className={`${error ? `${styles.input} ${styles.errorBorder}` : styles.input}`}
-          ref={refrerence}
+          ref={reference}
           placeholder={placeholderText}
           type={inputType}
         />
-      ) : (
-        <>
-          <select
-            name={nameSelect}
-            className={`${error ? `${styles.select} ${styles.errorBorder}` : styles.select}`}
-            ref={refrerence}
-          >
-            {children}
-          </select>
-        </>
-      )}
+      ) : null}
       <span className={styles.error}>{error}</span>
     </div>
   );

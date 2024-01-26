@@ -60,7 +60,16 @@
   background-color: #fff;
 }
 
+.containerSectionOne {
+  display: flex;
+  width: 100%;
+}
+
 .sectionOne {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
   margin: 50px 12%;
   max-width: 1500px;
 }
@@ -114,6 +123,53 @@
   max-width: 140px;
   font-size: 1em;
   font-weight: 500;
+}
+
+.editIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 0px;
+  cursor: pointer;
+}
+
+.editIconContainer:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease-in;
+  font-size: 2.5rem;
+  z-index: 100;
+}
+
+.editIcon {
+  position: relative;
+  right: 50px;
+}
+
+.editIconContainerHelpClientsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 91%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 0px;
+  cursor: pointer;
+}
+
+.editIconContainerHelpClientsSection:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease-in;
+  font-size: 2.5rem;
+  z-index: 100;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -207,6 +263,23 @@
   }
 
   .motivationalPhotoContainer:hover::before {
+    opacity: 1;
+    animation: appear 0.5s ease-in-out;
+  }
+
+  .editIcon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #00000092;
+    animation: disappear 0.5s ease-in-out;
+  }
+
+  .editIcon:hover::before {
     opacity: 1;
     animation: appear 0.5s ease-in-out;
   }
