@@ -110,9 +110,13 @@ const Modal = () => {
   return isOpen ? (
     chooseModal ? (
       <div className={styles.container}>
-        <div className={styles.subContainer}>
+        <div className={styles.subContainerCommonModal}>
           <div className={styles.logoContainer}>
-            <img className={styles.logoImg} src="assets/isologo.png" alt="logo-v.l" />
+            <img
+              className={styles.logoImg}
+              src={`${process.env.PUBLIC_URL}/assets/isologo.png`}
+              alt="logo-v.l"
+            />
           </div>
           <div className={styles.title}>{title.toUpperCase()}</div>
           <div className={styles.subTitle}>{description}</div>
@@ -136,7 +140,11 @@ const Modal = () => {
         >
           <div className={styles.subContainer}>
             <div className={styles.logoContainer}>
-              <img className={styles.logoImg} src="assets/isologo.png" alt="logo-v.l" />
+              <img
+                className={styles.logoImg}
+                src={`${process.env.PUBLIC_URL}/assets/isologo.png`}
+                alt="logo-v.l"
+              />
             </div>
             <div className={styles.title}>{title.toUpperCase()}</div>
             <TextInput labelName={'Título'} />
@@ -216,43 +224,74 @@ const Modal = () => {
               }}
               className={styles.input}
             />
-            <TextInput labelName={'Párrafo 1'} />
-            <textarea
-              type="text"
-              value={editInfo.descriptionLeft}
-              onChange={(e) => {
-                setEditInfo((prevInfo) => ({
-                  ...prevInfo,
-                  descriptionLeft: e.target.value
-                }));
-              }}
-              className={styles.textArea}
-            />
-            <TextInput labelName={'Foto'} />
-            <input
-              id="fileInput"
-              type="file"
-              onChange={(e) => handleFileChange(e, 'helpPhoto1')}
-              className={styles.input}
-            />
-            <TextInput labelName={'Párrafo 2'} />
-            <textarea
-              type="text"
-              value={editInfo.descriptionRight}
-              onChange={(e) => {
-                setEditInfo((prevInfo) => ({
-                  ...prevInfo,
-                  descriptionRight: e.target.value
-                }));
-              }}
-              className={styles.textArea}
-            />
-            <input
-              id="fileInput"
-              type="file"
-              onChange={(e) => handleFileChange(e, 'helpPhoto2')}
-              className={styles.input}
-            />
+            <div className={styles.flexContainer}>
+              <div className={styles.flexSubContainer}>
+                <TextInput labelName={'Párrafo 1'} />
+                <textarea
+                  type="text"
+                  value={editInfo.descriptionLeft}
+                  onChange={(e) => {
+                    setEditInfo((prevInfo) => ({
+                      ...prevInfo,
+                      descriptionLeft: e.target.value
+                    }));
+                  }}
+                  className={styles.textArea}
+                />
+                <TextInput labelName={'Imágen párrafo 1'} />
+                <div className={styles.photoContainer} onClick={handleUploadButtonClick}>
+                  <input
+                    id="fileInput"
+                    type="file"
+                    onChange={(e) => handleFileChange(e, 'helpPhoto1')}
+                    style={{ display: 'none' }}
+                  />
+                  <span className={styles.profileHover}>
+                    <FiEdit />
+                  </span>
+                  <img
+                    src={
+                      editInfo?.helpPhoto1 || `${process.env.PUBLIC_URL}/assets/profilePhoto.jpeg`
+                    }
+                    alt="biography-photo"
+                    className={styles.profilePhoto}
+                  />
+                </div>
+              </div>
+              <div className={styles.flexSubContainer}>
+                <TextInput labelName={'Párrafo 2'} />
+                <textarea
+                  type="text"
+                  value={editInfo.descriptionRight}
+                  onChange={(e) => {
+                    setEditInfo((prevInfo) => ({
+                      ...prevInfo,
+                      descriptionRight: e.target.value
+                    }));
+                  }}
+                  className={styles.textArea}
+                />
+                <TextInput labelName={'Imágen párrafo 2'} />
+                <div className={styles.photoContainer} onClick={handleUploadButtonClick}>
+                  <input
+                    id="fileInput"
+                    type="file"
+                    onChange={(e) => handleFileChange(e, 'helpPhoto2')}
+                    style={{ display: 'none' }}
+                  />
+                  <span className={styles.profileHover}>
+                    <FiEdit />
+                  </span>
+                  <img
+                    src={
+                      editInfo?.helpPhoto2 || `${process.env.PUBLIC_URL}/assets/profilePhoto.jpeg`
+                    }
+                    alt="biography-photo"
+                    className={styles.profilePhoto}
+                  />
+                </div>
+              </div>
+            </div>
             <div className={styles.btnsContainer}>
               <Button type="cancel" text={denyBtn} onClick={closeModal} />
               <Button type="submit" text={confirmBtn} onClick={handleConfirm} />
