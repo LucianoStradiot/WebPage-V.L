@@ -11,7 +11,7 @@ const Header = () => {
   const { setUser, setToken } = useStateContext();
   const { openModal } = useModalContext();
   const [isLoading, setIsLoading] = useState(false);
-  const phoneSoundRef = useRef(new Audio('audio/clickButton.mp3'));
+  const phoneSoundRef = useRef(new Audio(`${process.env.PUBLIC_URL}audio/clickButton.mp3`));
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const navigate = useNavigate();
@@ -75,7 +75,11 @@ const Header = () => {
         onClick={() => (isOpen ? toggleMenu() : '')}
       >
         <div className={`${scrollY > 100 ? styles.scrolled : styles.container}`}>
-          <img src="assets/logo2.png" alt="headerLogo" className={styles.logo} />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/logo2.png`}
+            alt="headerLogo"
+            className={styles.logo}
+          />
           <div className={styles.menuButton} onClick={toggleMenu}>
             <div className={`${isOpen ? styles.x1 : styles.bar}`}></div>
             <div className={`${isOpen ? styles.x2 : styles.bar} `}></div>
