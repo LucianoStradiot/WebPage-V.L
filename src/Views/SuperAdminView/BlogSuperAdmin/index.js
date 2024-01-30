@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './blog.module.css';
+import styles from './blogSuperAdmin.module.css';
 import axios from 'axios';
 
-function Blog() {
+function BlogSuperAdmin() {
   const clientId = '24632328236412900';
   const access_token =
     'IGQWRNZAmFsNjZACakNRT2RuWUpDdFBTdmN1SW9hRTRMcE5VcUZAlZAHprZAFZAfOERfLTZAoWEpZAT3BqbVgwemN5X0NWeW92MHNjczZAocnNjUDJDTmJfNzFhUHhrLUpMMUY3amUwNnUzU2FsTHEtUjBvcmhuVDd2ZA05pZAmhoQnF4SG96aGpiZAwZDZD';
@@ -20,11 +20,12 @@ function Blog() {
         console.error(error);
       });
   };
+
   return (
     <div className={styles.container} onClick={handleSubmit}>
-      Blog y Recetas
+      BlogSuperAdmin
     </div>
   );
 }
 
-export default Blog;
+export default BlogSuperAdmin;

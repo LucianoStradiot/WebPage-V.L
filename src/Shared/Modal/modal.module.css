@@ -13,22 +13,36 @@
   animation: modalAppear 0.2s ease-in;
 }
 
-.subContainer {
+.subContainerCommonModal {
   position: fixed;
   padding: 0 20px 20px 20px;
-  width: 370px;
+  width: 300px;
+  max-height: 500px;
   margin: 0 20px;
   box-shadow: 3px 3px 10px;
   border-radius: 10px;
   background: linear-gradient(to bottom, #d48c7c, #fff);
 }
 
+.subContainer {
+  position: fixed;
+  padding: 0 20px 20px 20px;
+  width: 300px;
+  max-height: 500px;
+  margin: 0 20px;
+  box-shadow: 3px 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #d48c7c, #fff);
+  overflow-y: scroll;
+}
+
 .logoImg {
   position: relative;
-  width: 80px;
-  padding: 10px;
+  width: 60px;
+  padding: 5px;
   border-radius: 20%;
-  bottom: 37px;
+  top: 10px;
+  margin-bottom: 25px;
   box-shadow: 3px 3px 5px #000;
   background-color: #fff;
 }
@@ -170,6 +184,31 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .subContainer {
+    width: 470px;
+    overflow-y: visible;
+    max-height: 100%;
+  }
+
+  .logoImg {
+    width: 80px;
+    padding: 10px;
+    top: -35px;
+    margin: 0;
+    box-shadow: 3px 3px 5px #000;
+    background-color: #fff;
+  }
+
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flexSubContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
   .input {
     padding: 10px;
     font-size: 15px;
