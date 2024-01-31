@@ -1,28 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './blog.module.css';
 import axios from 'axios';
 
 function Blog() {
-  const clientId = '24632328236412900';
-  const access_token =
-    'IGQWRNZAmFsNjZACakNRT2RuWUpDdFBTdmN1SW9hRTRMcE5VcUZAlZAHprZAFZAfOERfLTZAoWEpZAT3BqbVgwemN5X0NWeW92MHNjczZAocnNjUDJDTmJfNzFhUHhrLUpMMUY3amUwNnUzU2FsTHEtUjBvcmhuVDd2ZA05pZAmhoQnF4SG96aGpiZAwZDZD';
+  const [mediaData, setMediaData] = useState([]);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     axios
       .get(
-        `'https://graph.instagram.com/${clientId}?fields=id,username&access_token=${access_token}
-        `
+        `https://graph.instagram.com/${process.env.REACT_APP_CLIENT_ID}/media?fields=id,caption,media_type,media_url,username&access_token=${process.env.REACT_APP_ACCESS_TOKEN}`
       )
       .then((response) => {
-        console.log(response);
+        setMediaData(response.data.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  };
+  }, []);
+
   return (
-    <div className={styles.container} onClick={handleSubmit}>
-      Blog y Recetas
+    <div className={styles.container}>
+      {mediaData.map((media) => (
+        <div key={media.id} className={styles.containerImg}>
+          <div className={styles.subContainerImg}>
+            {media.media_type === 'IMAGE' || media.media_type === 'CAROUSEL_ALBUM' ? (
+              <img src={media.media_url} alt={media.caption} />
+            ) : (
+              <video src={media.media_url} alt={media.caption} controls />
+            )}
+            <div className={styles.containerImg}>
+              <p>{media.caption}</p>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
