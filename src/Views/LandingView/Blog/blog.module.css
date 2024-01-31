@@ -1,9 +1,57 @@
 .container {
-  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 400px;
+  gap: 16px;
+  justify-content: center;
+  margin: 120px 16px 19px 16px;
+}
+
+.containerImg {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.subContainerImg {
+  position: relative;
+  flex: 1;
+}
+
+.subContainerImg img,
+.subContainerImg video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.containerImg p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  position: absolute;
+  padding: 8px;
+  margin: 0;
+  top: 160px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.subContainerImg:hover .containerImg p {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 1024px) {
   .container {
-    margin-top: 120px;
+    margin: 140px 16px 19px 16px;
   }
 }

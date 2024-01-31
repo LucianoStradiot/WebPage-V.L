@@ -9,7 +9,6 @@ import Login from '../Views/LandingView/Login';
 import Error404 from '../Views/Error404';
 import SuperAdminView from '../Views/SuperAdminView';
 import HomeSuperAdmin from '../Views/SuperAdminView/HomeSuperAdmin';
-import BlogSuperAdmin from '../Views/SuperAdminView/BlogSuperAdmin';
 import RecoverPassword from '../Views/LandingView/Login/RecoverPassword';
 import ResetPassword from '../Views/LandingView/Login/ResetPassword';
 
@@ -35,7 +34,7 @@ const RoutesLanding = () => {
 
         <Route path="/super-admin" element={<SuperAdminView />}>
           <Route index element={<HomeSuperAdmin />} />
-          <Route path="/super-admin/blog" element={<BlogSuperAdmin />} />
+          <Route path="/super-admin/blog" element={<Blog />} />
           <Route path="/super-admin/talleres" element={<Talleres />} />
           <Route path="/super-admin/contacto" element={<Contacto />} />
         </Route>
